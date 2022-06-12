@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+    
+  <!-- Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+
+    <title>Results - Risk Estimation</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="box">
+            <div class="text-center">
+              <img src="images/icon.jpg" alt="icon">
+            </div>
+           
+            <h3 class="heading fsize16">Project Risk Estimation Results</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Risk Categories</th>
+                  <th scope="col" style="color: #697c37;">Predicted Risk Probability</th>
+                  <th scope="col" style="color: #697c37;">Predicted Risk Impact</th>
+                  <th scope="col" style="color: #697c37;">Predicted Risk Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" >Planning & Control Risks</th>
+                  <td>24%</td>
+                  <td>Very Low</td>
+                  <td style="color: green; font-weight: bold;">Low risky</td>
+                </tr>
+                <tr>
+                  <th scope="row">Organizational Environment Risks</th>
+                  <td>43%</td>
+                  <td>Low</td>
+                  <td style="color: yellow; font-weight: bold;">Moderate</td>
+                </tr>
+                <tr>
+                  <th scope="row">Project Complexity Risks</th>
+                  <td>76%</td>
+                  <td>Medium</td>
+                  <td style="color: orange; font-weight: bold;">High</td>
+                </tr>
+                <tr>
+                  <th scope="row">Requirement Risks</th>
+                  <td>80%</td>
+                  <td>High</td>
+                  <td style="color: red; font-weight: bold;">Very High</td>
+                </tr>
+                <tr>
+                  <th scope="row">Team Risks</th>
+                  <td>18%</td>
+                  <td>Medium</td>
+                  <td style="color: yellow; font-weight: bold;">Moderate</td>
+                </tr>
+                <tr>
+                  <th scope="row">External Risks</th>
+                  <td>58%</td>
+                  <td>High</td>
+                  <td style="color: orange; font-weight: bold;">High</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box">
+            <h3 class="heading fsize16">Risk Action Plan</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Risk Categories</th>
+                  <th scope="col" style="color: #697c37;">Risk Owner</th>
+                  <th scope="col" style="color: #697c37;">Treatment Action</th>
+                  <th scope="col" style="color: #697c37;">Contingent Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" >Planning & Control Risks</th>
+                  <td>24%</td>
+                  <td>Very Low</td>
+                  <td style="color: green">Low risky</td>
+                </tr>
+                <tr>
+                  <th scope="row">Organizational Environment Risks</th>
+                  <td>43%</td>
+                  <td>Low</td>
+                  <td style="color: yellow">Moderate</td>
+                </tr>
+                <tr>
+                  <th scope="row">Project Complexity Risks</th>
+                  <td>76%</td>
+                  <td>Medium</td>
+                  <td style="color: orange">High</td>
+                </tr>
+                <tr>
+                  <th scope="row">Requirement Risks</th>
+                  <td>80%</td>
+                  <td>High</td>
+                  <td style="color: red">Very High</td>
+                </tr>
+                <tr>
+                  <th scope="row">Team Risks</th>
+                  <td>18%</td>
+                  <td>Medium</td>
+                  <td style="color: yellow">Moderate</td>
+                </tr>
+                <tr>
+                  <th scope="row">External Risks</th>
+                  <td>58%</td>
+                  <td>High</td>
+                  <td style="color: orange">High</td>
+                </tr>
+              </tbody>
+            </table>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer>
+    <div class="m-5 d-flex justify-content-center">Copyright 2022 | @MahireAsadzade</div>
+  </footer>
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

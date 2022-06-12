@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+
+    <title>Project Risk Estimator</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h1 class="mb-3 header2">Project Risk Estimator</h1>
+          <p>Risk management is one of the ten fields discussed in the Project Management Body of Knowledge
+            (PMBOK), which serves as a guide that should be followed to increase the chances of successful
+            project development and implementation.</p>
+          <p>The main objectives of the work done for this project are the application of the state-of-the-art of
+            the research area related with risk management in software projects, particularly with the application
+            of machine learning techniques to improve risk management processes, and the development
+            of a software module capable of predicting the impact and likelihood of different risk categories
+            in a new software project before development begins.</p>
+          <p>A Risk Matrix (also known as a Risk Assessment Matrix) assists in risk evaluation by visualising the Likelihood and Impact of potential risks. It provides a visual representation of all the current risks associated with an organisation, activity, or project.</p>
+          <p>As an organisation, it is still needed to manage risk by assessing and then controlling and mitigating through various actions. To help with the risk management process, you can use a tool such as ProjectRiskEstimator to protect your people and your organisation. <a href="#">info@priskestimator.com</a></p>
+          
+        </div>
+
+        <div class="col-md-6">
+          <div class="box">
+            <div class="text-center">
+              <img src="{{ url_for('static', filename = 'images/icon.jpg') }}" alt="icon">
+            </div>
+           <div id="form1">
+            <h3 class="heading">Assess Your Project Per Risk items</h3>
+            <form class="mb-5" action="/results" method="post" id="contactForm" name="contactForm">
+              <div class="row">
+
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Project Name</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter a name">
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label for="pcategory" class="col-form-label">Project Category</label>
+                    <select class="custom-select" id="pcategory" name="pcategory">
+                    <option selected>Choose...</option>
+                    <option value="Transaction Processing System">Transaction Processing System </option>
+                    <option value="Management Information System">Management Information System</option>
+                    <option value="Enterprise System">Enterprise System</option>
+                    <option value="Safety Critical System">Safety Critical System</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="requirement" class="col-form-label">Project Requirement </label>
+                  <input type="text" class="form-control" name="requirement" id="requirement_" placeholder="Your project requirement">
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label for="reqcategory" class="col-form-label">Requirement Category</label>
+                    <select class="custom-select" id="reqcateg" name="reqcategory">
+                    <option selected>Choose...</option>
+                    <option value="Constraints">Constraints</option>
+                    <option value="Functional">Functionality</option>
+                    <option value="Interface">Interface</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Reliability">Reliability</option>
+                    <option value="Safety">Safety</option>
+                    <option value="Security">Security</option>
+                    <option value="Supportability">Supportability</option>
+                    <option value="Standards">Standards</option>
+                    <option value="Usability">Usability</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6 form-group">
+                  <label for="budget" class="col-form-label">Project Budget ($)</label>
+                  <input type="text" class="form-control" name="budget" id="budget" placeholder="Enter value">
+             
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label for="duration" class="col-form-label">Project Duration (days)</label>
+                  <input type="text" class="form-control" name="duration" id="duration" placeholder="Enter value">
+                </div>
+              </div>
+            </div>
+
+              <div id="form2" class="dnone">
+              <h3 class="heading notcenter">Expected Risk items: </h3>
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Requirement" id="Requirement1" value="Requirement">
+                    <label class="form-check-label" for="Requirement1">
+                      Continually changing system
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Quality" id="Quality" value="Quality">
+                    <label class="form-check-label" for="Quality">
+                      Customer complaints, product recalls, audit reports, product or product changes, information obtained from the corrective or preventative action process
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Market" id="Market">
+                    <label class="form-check-label" for="Market">
+                      Encountering with budget changes or currency fluctuation
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Team" id="Team" value="Team">
+                    <label class="form-check-label" for="Team">
+                      Experiencing difficulties in providing the communication among the team
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Technical" id="Technical" value="Technical">
+                    <label class="form-check-label" for="Technical">
+                      High level of technical complexity
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="projectcomplexity" id="project_complexity" value="Project complexity">
+                    <label class="form-check-label" for="project_complexity">
+                      Immature technology
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+           <div class="row">
+            <div class="col form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Schedule" id="Schedule" value="Schedule">
+                <label class="form-check-label" for="Schedule">
+                  Inadequate estimation of required resources and project schedule
+                </label>
+              </div>
+            </div>
+          </div>
+      
+
+   <div class="row">
+    <div class="col form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="Performance" id="Performance" value="Performance">
+        <label class="form-check-label" for="Performance">
+          Inexperienced team members
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="planCon" id="planCon" value="Planning & Control">
+      <label class="form-check-label" for="planCon">
+        Lack of an effective project management methodology
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="resource_availability" id="resav" value="Resource availability">
+      <label class="form-check-label" for="resav">
+        Lack of resources, unexpected availability, cost overruns
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Contract/Legal risk" id="legal" value="Contract/Legal risk">
+      <label class="form-check-label" for="legal">
+        Occurence in contract  changes during the project 
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Budget" id="Budget_r" value="Budget">
+      <label class="form-check-label" for="Budget_r">
+        Problems regarding budget, cash flow, or doubts about the return on investment of the project. 
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Technical2" id="Technical2" value="Technical">
+      <label class="form-check-label" for="Technical2">
+        Project involves the use of technology that has not been used in prior projects
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="orgenv" id="orgenv" value="Organizational Environment">
+      <label class="form-check-label" for="orgenv">
+        Unstable organizational environment
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Performance2" id="Performance2" value="Performance">
+      <label class="form-check-label" for="Performance2">
+        Team members lack specialized skills required
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="Requirement2" id="Requirement2" value="Requirement">
+      <label class="form-check-label" for="Requirement2">
+        Unclear system requirements
+      </label>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+              <div class="row" id="nxtbtn">
+                <div class="col-md-6 offset-md-6">
+                  <input type ='button' value="Next" id="nxt" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+      
+                </div>
+                </div>
+
+                <div class="row dnone " id="btns">
+                  <div class="col-md-6">
+                    <input type ='button' value="Previous" id="prev" class="btn btn-block btn-primary rounded-0 py-2 px-4 prev">
+                  
+                  </div>
+        
+                <div class="col-md-6">
+                 <input type="submit" id ="submitbtn" value="Calculate Risk Score"  onclick='myfunction();' class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </div>
+      </form>
+
+            <div id="form-message-warning mt-4"></div> 
+            <div id="form-message-success">
+              Your message was sent, thank you!
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <footer>
+      <div class="m-5 d-flex justify-content-center">Copyright 2022 | @MahireAsadzade</div>
+    </footer> 
+
+    <script src="{{ url_for('static', filename = 'js/multistepform.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/riskselection.js') }}"></script>
+  </body>
+</html>

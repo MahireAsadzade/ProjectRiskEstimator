@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/score-style.css') }}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+   
+    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+
+
+    <title>Results - Risk Estimation</title>
+  </head>
+  <body>
+  {% block content %}
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="box">
+            <div class="text-center">
+              <img src="{{ url_for('static', filename = 'images/icon.jpg') }}" alt="icon">
+            </div>
+           
+            <h3 class="heading fsize16">Project Risk Estimation Results</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col" id="risk">RISK CATEGORIES</th>
+                  <th scope="col" style="color: #697c37;">PREDICTED RISK PROBABILITY</th>
+                  <th scope="col" style="color: #697c37;">PREDICTED RISK IMPACT</th>
+                  <th scope="col" style="color: #697c37;">PREDICTED RISK SCORE</th>
+                  <th scope="col" style="color: #697c37;">DEVIATION IN SCHEDULE</th>
+                  <th scope="col" style="color: #697c37;">DEVIATION IN BUDGET</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="dnone" id="plancontrol">
+                  <th scope="row" >Planning & Control Risks</th>
+                  <td class="rating" id="planrisk" >{{ prob['Planning and Control'] }}%</td>
+                  <td class="dnone" id="planprob" >{{ prob['Planning and Control'] }}</td>
+                  <td id="planimp">{{ impacts['Planning and Control'] }}</td>
+                  <td id="overall_score1"></td>
+                  <td id="dev_sch1"></td>
+                  <td id="dev_bud1"></td>
+                </tr>
+                <tr class="dnone" id="orgenv_">
+                  <th scope="row">Organizational Environment Risks</th>
+                  <td class="rating" >{{ prob['Organizational Environment'] }}%</td>
+                  <td class="dnone" id="orgprob">{{ prob['Organizational Environment'] }}</td>
+                  <td id="orgimp">{{ impacts['Organizational Environment'] }}</td>
+                  <td id="overall_score2"></td>
+                  <td id="dev_sch2"></td>
+                  <td id="dev_bud2"></td>
+                </tr>
+                <tr class="dnone" id="projcomp">
+                  <th scope="row">Project Complexity Risks</th>
+                  <td class="rating" >{{ prob['Project complexity'] }}%</td>
+                  <td class="dnone" id="projprob">{{ prob['Project complexity'] }}</td>
+                  <td id="projimp">{{ impacts['Project complexity'] }}</td>
+                  <td id="overall_score3"></td>
+                  <td id="dev_sch3"></td>
+                  <td id="dev_bud3"></td>
+                </tr>
+                <tr class="dnone" id="req">
+                  <th scope="row">Requirement Risks</th>
+                  <td class="rating" >{{ prob['Requirement'] }}%</td>
+                  <td class="dnone" id="reqprob">{{ prob['Requirement'] }}</td>
+                  <td id="reqimp">{{ impacts['Requirement'] }}</td>
+                  <td id="overall_score4"></td>
+                  <td id="dev_sch4"></td>
+                  <td id="dev_bud4"></td>
+                </tr>
+                <tr class="dnone" id="teamrisk">
+                  <th scope="row">Team Risks</th>
+                  <td class="rating">{{ prob['Team'] }}%</td>
+                  <td class="dnone" id="teamprob">{{ prob['Team'] }}</td>
+                  <td id="teamimp">{{ impacts['Team'] }}</td>
+                  <td id="overall_score5"></td>
+                  <td id="dev_sch5"></td>
+                  <td id="dev_bud5"></td>
+                </tr>
+                <tr class="dnone" id="extrisk">
+                  <th scope="row">External Risks</th>
+                  <td class="rating">{{ prob['External'] }}%</td>
+                  <td class="dnone" id="extprob">{{ prob['External'] }}</td>
+                  <td id="extimp">{{ impacts['External'] }}</td>
+                  <td id="overall_score6"></td>
+                  <td id="dev_sch6"></td>
+                  <td id="dev_bud6"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         </div>
+        </div>
+      </div>
+  </div>
+  {% endblock %}
+  <footer>
+    <div class="m-5 d-flex justify-content-center">Copyright 2022 | @MahireAsadzade</div>
+  </footer>
+
+  <script src="{{ url_for('static', filename = 'js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/jquery.validate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/scorejs.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/riskselection.js') }}"></script>
+
+  
+  </body>
+</html>
